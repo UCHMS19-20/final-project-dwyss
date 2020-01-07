@@ -1,5 +1,7 @@
 # import pygame
 
+# this doesn't work right now cause i still have to add a lot of stuff
+
 print("Let's play baseball!!!")
 print("Here are the rules:\
     One player will be a pitcher and the other will be the hitter.\
