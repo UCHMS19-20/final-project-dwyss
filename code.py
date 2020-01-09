@@ -2,6 +2,7 @@
 
 # this doesn't work right now cause i still have to add a lot of stuff
 
+# these are the set of rules/the introduction that will show up on the screen when the game is starting
 print("Let's play baseball!!!")
 print("Here are the rules:\
     One player will be a pitcher and the other will be the hitter.\
@@ -15,15 +16,17 @@ print("Here are the rules:\
     n=normal swing\
     p=power swing\
     c=contact swing\
-    x=no swing")
+    x=no swing\
+    now, you should be able to play!!!")
+ # this 
 
-class baseball:
-    """baseball class"""
-    
+class players:
+    """players class"""
+        
     def __init__(self, name, attribute1, attribute2, attribute3, attribute4):
 
-        pitcher = baseball("Pitcher Man", "fastball", "curveball", "changeup", "slider")
-        hitter = baseball("Batter Boy", "normal swing", "power swing", "contact swing", "no swing")
+        pitcher = players("Pitcher Man", "fastball", "curveball", "changeup", "slider")
+        hitter = players("Batter Boy", "normal swing", "power swing", "contact swing", "no swing")
 
 code.interact(local=locals())
 
