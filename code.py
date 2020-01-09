@@ -1,4 +1,4 @@
-# import pygame
+import pygame
 
 # this doesn't work right now cause i still have to add a lot of stuff
 
@@ -18,8 +18,8 @@ print("Here are the rules:\
     c=contact swing\
     x=no swing\
     now, you should be able to play!!!")
- # this 
 
+# this is where the various abilities that the players have are stored
 class players:
     """players class"""
         
@@ -30,6 +30,13 @@ class players:
 
 code.interact(local=locals())
 
+# this is where the base runners are drawn
+import turtle as t
+t.rt(315)
+t.fd(250)
+
+# these are the various outcomes and results
+# different for each combination of input for the two players
 if pitcher.input == fastball:
     if hitter.input == normal swing:
         print("Strike swinging!")
