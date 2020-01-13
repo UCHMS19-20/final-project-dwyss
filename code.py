@@ -1,4 +1,11 @@
+# loading pygame
+import sys
 import pygame
+
+pygame.init()
+
+# size of pygame window
+screen = pygame.display.set_mode( (400, 400) )
 
 # this doesn't work right now cause i still have to add a lot of stuff
 
@@ -9,15 +16,58 @@ print("Here are the rules:\
     Each of these players will have to chose between different types of pitches and hit.\
     For the pitcher:\
     f=fastball\
-    c=curveball\
+    v=curveball\
     e=changeup\
     s=slider\
     For the hitter:\
-    n=normal swing\
-    p=power swing\
-    c=contact swing\
-    x=no swing\
+    n=normal_swing\
+    p=power_swing\
+    c=contact_swing\
+    x=no_swing\
     now, you should be able to play!!!")
+
+pitcher_choices = ['f', 'v', 'e', 's']
+hitter_choices = ['n', 'p', 'c', 'x']
+
+def pitch_type():
+    """The pitcher will input the type of pitch they will throw"""
+    input(pitcher_choices)
+    return
+
+def hit_type():
+    """The hitterwill input their type of swing"""
+    input(hitter_choices)
+    return
+
+# load the image of the baseball field
+background_image = pygame.image.load(baseball_field.png).convert()
+
+# all of the data
+ball = 0
+# definition of a walk
+while ball == 4:
+    base += 1
+strike = 0
+while strike == 3:
+    out += 1
+out = 0
+while out == 3:
+    sys.exit()
+
+# load the turtle, which will be the path that the baserunners take
+import turtle as t
+turtle.speed(8)
+# turtle.pos(-,-)
+# above is not finished, i will have to go through trial end error so i can insert the exact points
+
+t.rt(-45)
+
+def bases():
+    """This is how the runners will advance"""
+    
+    for n in range(base):
+        t.fd(50)
+        t.rt(-90)
 
 # this is where the various abilities that the players have are stored
 class players:
@@ -30,62 +80,57 @@ class players:
 
 code.interact(local=locals())
 
-# this is where the base runners are drawn
-import turtle as t
-t.rt(315)
-t.fd(250)
-
 # these are the various outcomes and results
 # different for each combination of input for the two players
-if pitcher.input == fastball:
-    if hitter.input == normal swing:
+if pitch_type == f:
+    if hit_type == n:
         print("Strike swinging!")
-        strikes += 1
-    elif hitter.input == power swing:
+        strike += 1
+    elif hit_type == p:
         print("Home run!")
-        bases += 4
-    elif hitter.input == contact swing:
+        base += 4
+    elif hit_type == c:
         print("Single!")
-        bases += 1
-    elif hitter.input == no swing:
+        base += 1
+    elif hit_type == x:
         print("Stike looking!")
-        strikes += 1
-elif pitcher.input == curveball:
-    if hitter.input == normal swing:
+        strike += 1
+elif pitch_type == v:
+    if hit_type == n:
         print("Groundout!")
-        outs += 1
-    elif hitter.input == power swing:
+        out += 1
+    elif hit_type == p:
         print("Strike swinging!")
-        strikes += 1
-    elif hitter.input == contact swing:
+        strike += 1
+    elif hit_type == c:
         print("Single!")
-        bases += 1
-    elif hitter.input == no swing:
+        base += 1
+    elif hit_type == x:
         print("Ball!")
-        balls += 1
-elif pitcher.input == changeup:
-    if hitter.input == normal swing:
+        ball += 1
+elif pitch_type == e:
+    if hit_type == n:
         print("Double!")
-        bases += 2
-    elif hitter.input == power swing:
+        base += 2
+    elif hit_type == p:
         print("Home run!")
-        bases += 4
-    elif hitter.input == contact swing:
+        base += 4
+    elif hit_type == c:
         print("Groundout!")
-        outs += 1
-    elif hitter.input == no swing:
+        out += 1
+    elif hit_type == x:
         print("Ball!")
-        balls += 1
-elif pitcher.input == slider:
-    if hitter.input == normal swing:
+        ball += 1
+elif pitch_type == s:
+    if hit_type == n:
         print("Lineout!")
-        outs += 1
-    elif hitter.input == power swing:
+        out += 1
+    elif hit_type == p:
         print("Strike swinging!")
-        strikes += 1
-    elif hitter.input == contact swing:
+        strike += 1
+    elif hit_type == c:
         print("Single!")
-        bases += 1
-    elif hitter.input == no swing:
+        base += 1
+    elif hit_type == x:
         print("Ball!")
-        balls += 1
+        ball += 1
