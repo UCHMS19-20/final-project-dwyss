@@ -2,6 +2,7 @@
 import sys
 import pygame
 
+#initiate the pygame
 pygame.init()
 
 # size of pygame window
