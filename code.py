@@ -6,7 +6,7 @@ import pygame
 pygame.init()
 
 # size of pygame window
-screen = pygame.display.set_mode( (400, 400) )
+screen = pygame.display.set_mode( (800, 450) )
 
 # this doesn't work right now cause i still have to add a lot of stuff
 
