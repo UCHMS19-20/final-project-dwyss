@@ -30,15 +30,8 @@ print("Here are the rules:\
 pitcher_choices = ['f', 'v', 'e', 's']
 hitter_choices = ['n', 'p', 'c', 'x']
 
-def pitch_type():
-    """The pitcher will input the type of pitch they will throw"""
-    input(pitcher_choices)
-    return
-
-def hit_type():
-    """The hitterwill input their type of swing"""
-    input(hitter_choices)
-    return
+pitch_type = input(pitcher_choices)
+hit_type = input(hit_type)
 
 # load the image of the baseball field
 background_image = pygame.image.load(baseball_field.png).convert()
@@ -83,55 +76,55 @@ code.interact(local=locals())
 
 # these are the various outcomes and results
 # different for each combination of input for the two players
-if pitch_type == f:
-    if hit_type == n:
+if pitch_type == 'f':
+    if hit_type == 'n':
         print("Strike swinging!")
         strike += 1
-    elif hit_type == p:
+    elif hit_type == 'p':
         print("Home run!")
         base += 4
-    elif hit_type == c:
+    elif hit_type == 'c':
         print("Single!")
         base += 1
-    elif hit_type == x:
+    elif hit_type == 'x':
         print("Stike looking!")
         strike += 1
-elif pitch_type == v:
-    if hit_type == n:
+elif pitch_type == 'v':
+    if hit_type == 'n':
         print("Groundout!")
         out += 1
-    elif hit_type == p:
+    elif hit_type == 'p':
         print("Strike swinging!")
         strike += 1
-    elif hit_type == c:
+    elif hit_type == 'c':
         print("Single!")
         base += 1
-    elif hit_type == x:
+    elif hit_type == 'x':
         print("Ball!")
         ball += 1
-elif pitch_type == e:
-    if hit_type == n:
+elif pitch_type == 'e':
+    if hit_type == 'n':
         print("Double!")
         base += 2
-    elif hit_type == p:
+    elif hit_type == 'p':
         print("Home run!")
         base += 4
-    elif hit_type == c:
+    elif hit_type == 'c':
         print("Groundout!")
         out += 1
-    elif hit_type == x:
+    elif hit_type == 'x':
         print("Ball!")
         ball += 1
-elif pitch_type == s:
-    if hit_type == n:
+elif pitch_type == 's':
+    if hit_type == 'n':
         print("Lineout!")
         out += 1
-    elif hit_type == p:
+    elif hit_type == 'p':
         print("Strike swinging!")
         strike += 1
-    elif hit_type == c:
+    elif hit_type == 'c':
         print("Single!")
         base += 1
-    elif hit_type == x:
+    elif hit_type == 'x':
         print("Ball!")
         ball += 1
