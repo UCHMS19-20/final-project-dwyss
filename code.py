@@ -16,14 +16,15 @@ print("Here are the rules:\
     Now, you should be able to play!!!")
 
 def get_pitch_type():
-    """Return the type of pitch that the pitcher will select"""
     pitcher_choices = ['f', 'v', 'e', 's']
-    pitch_type = input(pitcher_choices)
-    return
+    pitch = input(pitcher_choices)
+    return pitch
 
-get_pitch_type()
+pitch_type = get_pitch_type()
 
-def get_hit_type(hit):
+print(pitch_type)
+
+def get_hit_type():
     """Return the type of hit that the hitter will select"""
     hitter_choices = ['n', 'p', 'c', 'x']
     hit_type = input(hitter_choices)
