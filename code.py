@@ -16,9 +16,13 @@ print("Here are the rules:\
     Now, you should be able to play!!!")
 
 def get_pitch_type():
-    pitcher_choices = ['f', 'v', 'e', 's']
-    pitch = input(pitcher_choices)
+    pitch_choices = ['f', 'v', 'e', 's']
+    pitch = input(pitch_choices)
     return pitch
+
+pitch_choices = ['f', 'v', 'e', 's']
+pitch = input(pitch_choices)
+print(pitch)
 
 pitch_type = get_pitch_type()
 
@@ -114,7 +118,7 @@ while outs == 3:
     strikes = 0
     outs = 0
 while bases == 4:
-    Team += 1
+    team += 1
 
 # this is where the various abilities that the players have are stored
 class players:
