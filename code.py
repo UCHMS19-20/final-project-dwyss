@@ -17,16 +17,14 @@ print("Here are the rules:\
 
 def get_pitch_type():
     pitch_choices = ['f', 'v', 'e', 's']
-    pitch = input(pitch_choices)
+    pitch = input("select a pitch type")
     return pitch
+
+get_pitch_type()
 
 pitch_choices = ['f', 'v', 'e', 's']
 pitch = input(pitch_choices)
 print(pitch)
-
-pitch_type = get_pitch_type()
-
-print(pitch_type)
 
 def get_hit_type():
     """Return the type of hit that the hitter will select"""
@@ -40,6 +38,30 @@ def get_hit_type():
 #hitter_choices = ['n', 'p', 'c', 'x']
 #pitch_type = input(pitcher_choices)
 #hit_type = input(hit_type)
+
+# all of the data
+balls = 0
+strikes = 0
+outs = 0
+bases = 0
+away_team_runs = 0
+home_team_runs = 0
+# definition of a walk
+while balls == 4:
+    bases += 1
+    balls = 0
+    strikes = 0
+while strikes == 3:
+    outs += 1
+    balls = 0
+    strikes = 0
+while outs == 3:
+    # change sides
+    balls = 0
+    strikes = 0
+    outs = 0
+while bases == 4:
+    team += 1
 
 # these are the various outcomes and results
 # different for each combination of input for the two players
@@ -95,30 +117,6 @@ elif pitch_type == 's':
     elif hit_type == 'x':
         print("Ball!")
         balls += 1
-
-# all of the data
-balls = 0
-strikes = 0
-outs = 0
-bases = 0
-away_team_runs = 0
-home_team_runs = 0
-# definition of a walk
-while balls == 4:
-    bases += 1
-    balls = 0
-    strikes = 0
-while strikes == 3:
-    outs += 1
-    balls = 0
-    strikes = 0
-while outs == 3:
-    # change sides
-    balls = 0
-    strikes = 0
-    outs = 0
-while bases == 4:
-    team += 1
 
 # this is where the various abilities that the players have are stored
 class players:
