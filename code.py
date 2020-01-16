@@ -15,22 +15,27 @@ print("Here are the rules:\
     x=no_swing\
     Now, you should be able to play!!!")
 
-def get_pitch_type():
-    pitch_choices = ['f', 'v', 'e', 's']
-    pitch = input("select a pitch type")
-    return pitch
+pitch_type=[]
+hit_type=[]
 
-get_pitch_type()
+def get_pitch_type(pitch_type=[]):
+    global pitch_type
+    pitch_choices = [f, v, e, s]
+    pitch_type = input(pitch_choies)
+    return pitch_type
 
-pitch_choices = ['f', 'v', 'e', 's']
-pitch = input(pitch_choices)
-print(pitch)
-
-def get_hit_type():
-    """Return the type of hit that the hitter will select"""
+def get_hit_type(hit_type=[]):
+    global hit_type
     hitter_choices = ['n', 'p', 'c', 'x']
     hit_type = input(hitter_choices)
-    return
+    return hit_type
+
+def baseball():
+    
+    get_pitch_type()
+    get_hit_type()
+
+baseball()
 
 # following code used as comment temporarily
 # so that it can still be in code but will not be used for now
