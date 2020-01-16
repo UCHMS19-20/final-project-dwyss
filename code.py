@@ -15,35 +15,6 @@ print("Here are the rules:\
     x=no_swing\
     Now, you should be able to play!!!")
 
-pitch_type=[]
-hit_type=[]
-
-def get_pitch_type(pitch_type=[]):
-    global pitch_type
-    pitch_choices = [f, v, e, s]
-    pitch_type = input(pitch_choies)
-    return pitch_type
-
-def get_hit_type(hit_type=[]):
-    global hit_type
-    hitter_choices = ['n', 'p', 'c', 'x']
-    hit_type = input(hitter_choices)
-    return hit_type
-
-def baseball():
-    
-    get_pitch_type()
-    get_hit_type()
-
-baseball()
-
-# following code used as comment temporarily
-# so that it can still be in code but will not be used for now
-#pitcher_choices = ['f', 'v', 'e', 's']
-#hitter_choices = ['n', 'p', 'c', 'x']
-#pitch_type = input(pitcher_choices)
-#hit_type = input(hit_type)
-
 # all of the data
 balls = 0
 strikes = 0
@@ -67,6 +38,70 @@ while outs == 3:
     outs = 0
 while bases == 4:
     team += 1
+
+if balls < 4:
+    if strikes < 3:
+        if outs < 3:
+            True
+        else:
+            False
+    else:
+        False
+else:
+    False
+
+pitch_choices = ['f', 'v', 'e', 's']
+hitter_choices = ['n', 'p', 'c', 'x']
+
+while True:
+    pitch_type = input(pitch_choices)
+    hit_type = input(hit_choices)
+
+while False:
+    if balls >= 4:
+        print("Walk!")
+        bases += 1
+        balls = 0
+        strikes = 0
+    if strikes >= 3:
+        print("Strikeout!")
+        outs += 1
+        balls = 0
+        strikes = 0
+    if outs >3:
+        print("Change sides")
+        balls = 0
+        strikes = 0
+        outs = 0
+
+pitch_type=[]
+hit_type=[]
+
+def get_pitch_type():
+    global pitch_type
+    pitch_choices = [f, v, e, s]
+    pitch_type = input(pitch_choies)
+    return pitch_type
+
+def get_hit_type():
+    global hit_type
+    hitter_choices = ['n', 'p', 'c', 'x']
+    hit_type = input(hitter_choices)
+    return hit_type
+
+def baseball():
+    
+    get_pitch_type()
+    get_hit_type()
+
+baseball()
+
+# following code used as comment temporarily
+# so that it can still be in code but will not be used for now
+#pitcher_choices = ['f', 'v', 'e', 's']
+#hitter_choices = ['n', 'p', 'c', 'x']
+#pitch_type = input(pitcher_choices)
+#hit_type = input(hit_type)
 
 # these are the various outcomes and results
 # different for each combination of input for the two players
