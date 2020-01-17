@@ -22,16 +22,17 @@ outs = 0
 bases = 0
 runs = 0
 
-if balls < 4:
-    if strikes < 3:
-        if outs < 3:
-            True
+def determine_playable():
+    if balls < 4:
+        if strikes < 3:
+            if outs < 3:
+                True
+            else:
+                False
         else:
             False
     else:
         False
-else:
-    False
 
 # dictionaries of the possible inputs for the players
 pitch_choices = ['f', 'v', 'e', 's']
@@ -112,28 +113,32 @@ def get_result():
             print("Ball!")
             balls += 1
 
-while True:
-    print("{balls} balls, {strikes} strikes, {outs} outs")
-    get_pitch_type()
-    get_hit_type()
-    get_result()
+def process():
+    while True:
+        print("{balls} balls, {strikes} strikes, {outs} outs")
+        get_pitch_type()
+        get_hit_type()
+        get_result()
+    while False:
+        if balls = 4:
+            print("Walk!")
+            bases += 1
+            balls = 0
+            strikes = 0
+        if strikes = 3:
+            print("Strikeout!")
+            outs += 1
+            balls = 0
+            strikes = 0
+        if outs = 3:
+            print("Change sides")
+            balls = 0
+            strikes = 0
+            outs = 0
 
-while False:
-    if balls >= 4:
-        print("Walk!")
-        bases += 1
-        balls = 0
-        strikes = 0
-    if strikes >= 3:
-        print("Strikeout!")
-        outs += 1
-        balls = 0
-        strikes = 0
-    if outs >3:
-        print("Change sides")
-        balls = 0
-        strikes = 0
-        outs = 0
+def baseball():
+    determine_playable()
+    process()
 
 # this is where the various abilities that the players have are stored
 class players:
