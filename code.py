@@ -15,29 +15,12 @@ print("Here are the rules:\
     x=no_swing\
     Now, you should be able to play!!!")
 
-# all of the data
+# all of the stats in the game
 balls = 0
 strikes = 0
 outs = 0
 bases = 0
-away_team_runs = 0
-home_team_runs = 0
-# definition of a walk
-while balls == 4:
-    bases += 1
-    balls = 0
-    strikes = 0
-while strikes == 3:
-    outs += 1
-    balls = 0
-    strikes = 0
-while outs == 3:
-    # change sides
-    balls = 0
-    strikes = 0
-    outs = 0
-while bases == 4:
-    team += 1
+runs = 0
 
 if balls < 4:
     if strikes < 3:
