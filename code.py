@@ -54,6 +54,7 @@ pitch_choices = ['f', 'v', 'e', 's']
 hitter_choices = ['n', 'p', 'c', 'x']
 
 while True:
+    print("{balls} balls, {strikes} strikes, {outs} outs")
     pitch_type = input(pitch_choices)
     hit_type = input(hit_choices)
 
