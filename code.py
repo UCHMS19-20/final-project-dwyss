@@ -138,6 +138,8 @@ def baseball():
     determine_playable()
     process()
 
+baseball()
+
 # this is where the various abilities that the players have are stored
 class players:
     """players class"""
