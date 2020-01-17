@@ -31,13 +31,13 @@ def determine_playable():
     if balls < 4:
         if strikes < 3:
             if outs < 3:
-                True
+                return True
             else:
-                False
+                return False
         else:
-            False
+            return False
     else:
-        False
+        return False
 
 # dictionaries of the possible inputs for the players
 pitch_choices = ['f', 'v', 'e', 's']
@@ -58,6 +58,9 @@ def get_hit_type():
 # these are the various outcomes and results
 # different for each combination of input for the two players
 def get_result():
+    global balls
+    global strikes
+    global outs
     if pitch_type == 'f':
         if hit_type == 'n':
             print("Strike swinging!")
@@ -112,23 +115,26 @@ def get_result():
             balls += 1
 
 def process():
+    global balls
+    global strikes
+    global outs
     while True:
-        print("{balls} balls, {strikes} strikes, {outs} outs")
+        print(f"{balls} balls, {strikes} strikes, {outs} outs")
         get_pitch_type()
         get_hit_type()
         get_result()
     while False:
-        if balls = 4:
+        if balls == 4:
             print("Walk!")
             bases += 1
             balls = 0
             strikes = 0
-        elif strikes = 3:
+        elif strikes == 3:
             print("Strikeout!")
             outs += 1
             balls = 0
             strikes = 0
-        elif outs = 3:
+        elif outs == 3:
             print("Change sides")
             balls = 0
             strikes = 0
@@ -149,4 +155,4 @@ class players:
         pitcher = players("Pitcher Man", "fastball", "curveball", "changeup", "slider")
         hitter = players("Batter Boy", "normal swing", "power swing", "contact swing", "no swing")
 
-code.interact(local=locals())
+# code.interact(local=locals())
