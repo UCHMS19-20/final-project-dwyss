@@ -33,13 +33,90 @@ if balls < 4:
 else:
     False
 
+# dictionaries of the possible inputs for the players
 pitch_choices = ['f', 'v', 'e', 's']
 hitter_choices = ['n', 'p', 'c', 'x']
 
+def get_pitch_type():
+    global pitch_type
+    pitch_choices = ['f', 'v', 'e', 's']
+    pitch_type = input(pitch_choices)
+    return pitch_type
+
+def get_hit_type():
+    global hit_type
+    hitter_choices  = ['n', 'p', 'c', 'x']
+    hit_type = input(hitter_choices)
+    return hit_type
+
+# following code used as comment temporarily
+# so that it can still be in code but will not be used for now
+#pitcher_choices = ['f', 'v', 'e', 's']
+#hitter_choices = ['n', 'p', 'c', 'x']
+#pitch_type = input(pitcher_choices)
+#hit_type = input(hit_type)
+
+# these are the various outcomes and results
+# different for each combination of input for the two players
+def get_result():
+    if pitch_type == 'f':
+        if hit_type == 'n':
+            print("Strike swinging!")
+            strikes += 1
+        elif hit_type == 'p':
+            print("Home run!")
+            bases += 4
+        elif hit_type == 'c':
+            print("Single!")
+            bases += 1
+        elif hit_type == 'x':
+            print("Stike looking!")
+            strikes += 1
+    elif pitch_type == 'v':
+        if hit_type == 'n':
+            print("Groundout!")
+            outs += 1
+        elif hit_type == 'p':
+            print("Strike swinging!")
+            strikes += 1
+        elif hit_type == 'c':
+            print("Single!")
+            bases += 1
+        elif hit_type == 'x':
+            print("Ball!")
+            balls += 1
+    elif pitch_type == 'e':
+        if hit_type == 'n':
+            print("Double!")
+            bases += 2
+        elif hit_type == 'p':
+            print("Home run!")
+            bases += 4
+        elif hit_type == 'c':
+            print("Groundout!")
+            outs += 1
+        elif hit_type == 'x':
+            print("Ball!")
+            balls += 1
+    elif pitch_type == 's':
+        if hit_type == 'n':
+            print("Lineout!")
+            outs += 1
+        elif hit_type == 'p':
+            print("Strike swinging!")
+            strikes += 1
+        elif hit_type == 'c':
+            print("Single!")
+            bases += 1
+        elif hit_type == 'x':
+            print("Ball!")
+            balls += 1
+
 while True:
     print("{balls} balls, {strikes} strikes, {outs} outs")
-    pitch_type = input(pitch_choices)
-    hit_type = input(hit_choices)
+    get_pitch_type()
+    get_hit_type()
+    get_result()
 
 while False:
     if balls >= 4:
@@ -57,90 +134,6 @@ while False:
         balls = 0
         strikes = 0
         outs = 0
-
-pitch_type=[]
-hit_type=[]
-
-def get_pitch_type():
-    global pitch_type
-    pitch_choices = [f, v, e, s]
-    pitch_type = input(pitch_choies)
-    return pitch_type
-
-def get_hit_type():
-    global hit_type
-    hitter_choices = ['n', 'p', 'c', 'x']
-    hit_type = input(hitter_choices)
-    return hit_type
-
-def baseball():
-    
-    get_pitch_type()
-    get_hit_type()
-
-baseball()
-
-# following code used as comment temporarily
-# so that it can still be in code but will not be used for now
-#pitcher_choices = ['f', 'v', 'e', 's']
-#hitter_choices = ['n', 'p', 'c', 'x']
-#pitch_type = input(pitcher_choices)
-#hit_type = input(hit_type)
-
-# these are the various outcomes and results
-# different for each combination of input for the two players
-if pitch_type == 'f':
-    if hit_type == 'n':
-        print("Strike swinging!")
-        strikes += 1
-    elif hit_type == 'p':
-        print("Home run!")
-        bases += 4
-    elif hit_type == 'c':
-        print("Single!")
-        bases += 1
-    elif hit_type == 'x':
-        print("Stike looking!")
-        strikes += 1
-elif pitch_type == 'v':
-    if hit_type == 'n':
-        print("Groundout!")
-        outs += 1
-    elif hit_type == 'p':
-        print("Strike swinging!")
-        strikes += 1
-    elif hit_type == 'c':
-        print("Single!")
-        bases += 1
-    elif hit_type == 'x':
-        print("Ball!")
-        balls += 1
-elif pitch_type == 'e':
-    if hit_type == 'n':
-        print("Double!")
-        bases += 2
-    elif hit_type == 'p':
-        print("Home run!")
-        bases += 4
-    elif hit_type == 'c':
-        print("Groundout!")
-        outs += 1
-    elif hit_type == 'x':
-        print("Ball!")
-        balls += 1
-elif pitch_type == 's':
-    if hit_type == 'n':
-        print("Lineout!")
-        outs += 1
-    elif hit_type == 'p':
-        print("Strike swinging!")
-        strikes += 1
-    elif hit_type == 'c':
-        print("Single!")
-        bases += 1
-    elif hit_type == 'x':
-        print("Ball!")
-        balls += 1
 
 # this is where the various abilities that the players have are stored
 class players:
