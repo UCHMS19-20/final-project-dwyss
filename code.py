@@ -118,12 +118,12 @@ def process():
             bases += 1
             balls = 0
             strikes = 0
-        if strikes = 3:
+        elif strikes = 3:
             print("Strikeout!")
             outs += 1
             balls = 0
             strikes = 0
-        if outs = 3:
+        elif outs = 3:
             print("Change sides")
             balls = 0
             strikes = 0
