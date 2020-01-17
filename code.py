@@ -50,13 +50,6 @@ def get_hit_type():
     hit_type = input(hitter_choices)
     return hit_type
 
-# following code used as comment temporarily
-# so that it can still be in code but will not be used for now
-#pitcher_choices = ['f', 'v', 'e', 's']
-#hitter_choices = ['n', 'p', 'c', 'x']
-#pitch_type = input(pitcher_choices)
-#hit_type = input(hit_type)
-
 # these are the various outcomes and results
 # different for each combination of input for the two players
 def get_result():
