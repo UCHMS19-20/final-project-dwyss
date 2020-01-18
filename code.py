@@ -1,8 +1,3 @@
-import sys
-import pygame
-
-pygame.init()
-
 # these are the set of rules/the introduction that will show up on the screen when the game is starting
 print("Let's play baseball!!!")
 print("Here are the rules:\
@@ -61,6 +56,7 @@ def get_result():
     global balls
     global strikes
     global outs
+    global bases
     if pitch_type == 'f':
         if hit_type == 'n':
             print("Strike swinging!")
