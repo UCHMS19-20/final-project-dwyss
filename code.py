@@ -2,7 +2,7 @@
 print("Let's play baseball!!!")
 print("Here are the rules:")
 print("One player will be a pitcher and the other will be the hitter.")
-print("Each of these players will have to chose between different types of pitches and hit.")
+print("Each of these players will have to chose between different types of pitches and swings.")
 print("For the pitcher:")
 print("'f' = fastball")
 print("'v' = curveball")
@@ -27,11 +27,11 @@ def determine_playable():
         if strikes < 3:
             if outs < 3:
                 return True
-            else:
+            elif outs >= 3:
                 return False
-        else:
+        elif strikes >= 3:
             return False
-    else:
+    elif balls >= 4:
         return False
 
 # dictionaries of the possible inputs for the players
@@ -62,6 +62,7 @@ def get_result():
         if hit_type == 'n':
             print("Strike swinging!")
             strikes += 1
+            print(f"Strike {strikes}!")
         elif hit_type == 'p':
             print("Home run!")
             bases += 4
@@ -73,19 +74,22 @@ def get_result():
         elif hit_type == 'x':
             print("Stike looking!")
             strikes += 1
+            print(f"Strike {strikes}!")
     elif pitch_type == 'v':
         if hit_type == 'n':
             print("Groundout!")
             outs += 1
+            print(f"{outs} outs!")
         elif hit_type == 'p':
             print("Strike swinging!")
             strikes += 1
+            print(f"Strike {strikes}!")
         elif hit_type == 'c':
             print("Single!")
             bases += 1
         elif hit_type == 'x':
-            print("Ball!")
             balls += 1
+            print(f"Ball {balls}!")
     elif pitch_type == 'e':
         if hit_type == 'n':
             print("Double!")
@@ -98,27 +102,31 @@ def get_result():
         elif hit_type == 'c':
             print("Groundout!")
             outs += 1
+            print(f"{outs} outs!")
         elif hit_type == 'x':
-            print("Ball!")
             balls += 1
+            print(f"Ball {balls}!")
     elif pitch_type == 's':
         if hit_type == 'n':
             print("Lineout!")
             outs += 1
+            print(f"{outs} outs!")
         elif hit_type == 'p':
             print("Strike swinging!")
             strikes += 1
+            print(f"Strike {strikes}!")
         elif hit_type == 'c':
             print("Single!")
             bases += 1
         elif hit_type == 'x':
-            print("Ball!")
             balls += 1
+            print(f"Ball {balls}!")
 
 def process():
     global balls
     global strikes
     global outs
+    global bases
     while True:
         print(f"{balls} balls, {strikes} strikes, {outs} outs")
         get_pitch_type()
@@ -126,17 +134,17 @@ def process():
         get_result()
         determine_playable()
     while False:
-        if balls == 4:
+        if balls >= 4:
             print("Walk!")
             bases += 1
             balls = 0
             strikes = 0
-        elif strikes == 3:
+        elif strikes >= 3:
             print("Strikeout!")
             outs += 1
             balls = 0
             strikes = 0
-        elif outs == 3:
+        elif outs >= 3:
             print("Change sides")
             balls = 0
             strikes = 0
