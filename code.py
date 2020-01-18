@@ -1,19 +1,19 @@
 # these are the set of rules/the introduction that will show up on the screen when the game is starting
 print("Let's play baseball!!!")
-print("Here are the rules:\
-    One player will be a pitcher and the other will be the hitter.\
-    Each of these players will have to chose between different types of pitches and hit.\
-    For the pitcher:\
-    f=fastball\
-    v=curveball\
-    e=changeup\
-    s=slider\
-    For the hitter:\
-    n=normal_swing\
-    p=power_swing\
-    c=contact_swing\
-    x=no_swing\
-    Now, you should be able to play!!!")
+print("Here are the rules:")
+print("One player will be a pitcher and the other will be the hitter.")
+print("Each of these players will have to chose between different types of pitches and hit.")
+print("For the pitcher:")
+print("'f' = fastball")
+print("'v' = curveball")
+print("'e' = changeup")
+print("'s' = slider")
+print("For the hitter:")
+print("'n' = normal swing")
+print("'p' = power swing")
+print("'c' = contact swing")
+print("'x' = no swing")
+print("Now, you should be able to play!!!")
 
 # all of the stats in the game
 balls = 0
@@ -57,6 +57,7 @@ def get_result():
     global strikes
     global outs
     global bases
+    global runs
     if pitch_type == 'f':
         if hit_type == 'n':
             print("Strike swinging!")
@@ -64,6 +65,8 @@ def get_result():
         elif hit_type == 'p':
             print("Home run!")
             bases += 4
+            runs += 1
+            print(f"You have {runs} runs!")
         elif hit_type == 'c':
             print("Single!")
             bases += 1
