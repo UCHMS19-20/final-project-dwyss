@@ -93,6 +93,8 @@ def get_result():
         elif hit_type == 'p':
             print("Home run!")
             bases += 4
+            runs += 1
+            print(f"You have {runs} runs!")
         elif hit_type == 'c':
             print("Groundout!")
             outs += 1
@@ -122,6 +124,7 @@ def process():
         get_pitch_type()
         get_hit_type()
         get_result()
+        determine_playable()
     while False:
         if balls == 4:
             print("Walk!")
