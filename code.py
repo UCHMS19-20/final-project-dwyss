@@ -20,7 +20,6 @@ balls = 0
 strikes = 0
 outs = 0
 total_bases = 0
-runs = 0
 
 def determine_playable():
     global balls
@@ -82,7 +81,6 @@ def get_swing_type():
 
 def determine_runs():
     global total_bases
-    global runs
     return total_bases
     runs = total_bases // 4
     print(f"runs = {runs}")
