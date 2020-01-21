@@ -193,22 +193,18 @@ def get_result():
             print(f"Ball {balls}!")
             determine_playable()
 
-def process():
+def baseball():
     global balls
     global strikes
     global outs
     global total_bases
+    determine_playable
     while True:
         print(f"{balls} balls, {strikes} strikes, {outs} outs")
         get_pitch_type()
         get_swing_type()
         get_result()
-        determine_playable()
     while False:
         make_true()
-
-def baseball():
-    determine_playable()
-    process()
 
 baseball()
