@@ -21,6 +21,7 @@ strikes = 0
 outs = 0
 total_bases = 0
 
+# determine whether or not the input is ready to be received
 def determine_playable():
     global balls
     global strikes
@@ -36,6 +37,7 @@ def determine_playable():
     elif balls >= 4:
         return False
 
+# if the input is not ready, this will change the stats to make it true
 def make_true():
     global balls
     global strikes
@@ -67,26 +69,28 @@ def make_true():
         return strikes
         return outs
 
+# where the input of the pitch type is gotten from
 def get_pitch_type():
     global pitch_type
     pitch_choices = ['f', 'v', 'e', 's']
     pitch_type = input(pitch_choices)
     return pitch_type
 
+# where the input of the hit type is gotten from
 def get_swing_type():
     global swing_type
     hitter_choices  = ['n', 'p', 'c', 'x']
     swing_type = input(hitter_choices)
     return swing_type
 
+# how the number of runs that the player has is calculated
 def determine_runs():
     global total_bases
     return total_bases
     runs = total_bases // 4
     print(f"runs = {runs}")
 
-# these are the various outcomes and results
-# different for each combination of input for the two players
+# these are the various outcomes and results and vary for each combo of inputs
 def get_result():
     global balls
     global strikes
@@ -191,6 +195,7 @@ def get_result():
             print(f"Ball {balls}!")
             determine_playable()
 
+# the order in which the functions will run
 def baseball():
     global balls
     global strikes
