@@ -19,7 +19,7 @@ print("Now, you should be able to play!!!")
 balls = 0
 strikes = 0
 outs = 0
-bases = 0
+total_bases = 0
 runs = 0
 
 def determine_playable():
@@ -56,7 +56,7 @@ def get_result():
     global balls
     global strikes
     global outs
-    global bases
+    global total_bases
     global runs
     if pitch_type == 'f':
         if hit_type == 'n':
@@ -65,12 +65,10 @@ def get_result():
             print(f"Strike {strikes}!")
         elif hit_type == 'p':
             print("Home run!")
-            bases += 4
-            runs += 1
-            print(f"You have {runs} runs!")
+            total_bases += 4
         elif hit_type == 'c':
             print("Single!")
-            bases += 1
+            total_bases += 1
         elif hit_type == 'x':
             print("Stike looking!")
             strikes += 1
@@ -86,17 +84,17 @@ def get_result():
             print(f"Strike {strikes}!")
         elif hit_type == 'c':
             print("Single!")
-            bases += 1
+            total_bases += 1
         elif hit_type == 'x':
             balls += 1
             print(f"Ball {balls}!")
     elif pitch_type == 'e':
         if hit_type == 'n':
             print("Double!")
-            bases += 2
+            total_bases += 2
         elif hit_type == 'p':
             print("Home run!")
-            bases += 4
+            total_bases += 4
             runs += 1
             print(f"You have {runs} runs!")
         elif hit_type == 'c':
@@ -117,26 +115,34 @@ def get_result():
             print(f"Strike {strikes}!")
         elif hit_type == 'c':
             print("Single!")
-            bases += 1
+            total_bases += 1
         elif hit_type == 'x':
             balls += 1
             print(f"Ball {balls}!")
+
+def determine_runs():
+    global total_bases
+    global runs
+    return total_bases
+    runs = total_bases // 4
 
 def process():
     global balls
     global strikes
     global outs
-    global bases
+    global total_bases
     while True:
+        print(f"runs = {runs}")
         print(f"{balls} balls, {strikes} strikes, {outs} outs")
         get_pitch_type()
         get_hit_type()
         get_result()
+        determine_runs()
         determine_playable()
     while False:
         if balls >= 4:
             print("Walk!")
-            bases += 1
+            total_bases += 1
             balls = 0
             strikes = 0
         elif strikes >= 3:
