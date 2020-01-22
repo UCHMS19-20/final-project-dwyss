@@ -145,7 +145,7 @@ def get_result():
             balls += 1
             return balls
             print(f"Ball {balls}!")
-            determine_playable
+            determine_playable()
     elif pitch_type == 'e':
         if swing_type == 'n':
             print("Double!")
