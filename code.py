@@ -37,12 +37,153 @@ def determine_playable():
     elif balls >= 4:
         return False
 
-# if the input is not ready, this will change the stats to make it true
-def make_true():
+# where the input of the pitch type is gotten from
+def get_pitch_type():
+    global pitch_type
+    pitch_choices = ['f', 'v', 'e', 's']
+    pitch_type = input(pitch_choices)
+    return pitch_type
+
+# where the input of the hit type is gotten from
+def get_swing_type():
+    global swing_type
+    hitter_choices  = ['n', 'p', 'c', 'x']
+    swing_type = input(hitter_choices)
+    return swing_type
+
+# how the number of runs that the player has is calculated
+def return_runs():
+    global total_bases
+    global runs
+    return total_bases
+    runs = total_bases // 4
+    print(f"runs = {runs}")
+
+# these are the various outcomes and results and vary for each combo of inputs
+def get_result():
     global balls
     global strikes
-    global aouts
-    if balls >= 4:
+    global outs
+    global total_bases
+    global runs
+    if pitch_type == 'f':
+        if swing_type == 'n':
+            print("Strike swinging!")
+            strikes += 1
+            return strikes
+            print(f"Strike {strikes}!")
+        elif swing_type == 'p':
+            print("Home run!")
+            total_bases += 4
+            balls = 0
+            strikes = 0
+            return total_bases
+            return balls
+            return strikes
+            return_runs()
+        elif swing_type == 'c':
+            print("Single!")
+            total_bases += 1
+            balls = 0
+            strikes = 0
+            return total_bases
+            return balls
+            return strikes
+            return_runs()
+        elif swing_type == 'x':
+            print("Stike looking!")
+            strikes += 1
+            return strikes
+            print(f"Strike {strikes}!")
+    elif pitch_type == 'v':
+        if swing_type == 'n':
+            print("Groundout!")
+            outs += 1
+            balls = 0
+            strikes = 0
+            return outs
+            return balls
+            return strikes
+            print(f"{outs} outs!")
+        elif swing_type == 'p':
+            print("Strike swinging!")
+            strikes += 1
+            return strikes
+            print(f"Strike {strikes}!")
+        elif swing_type == 'c':
+            print("Single!")
+            total_bases += 1
+            balls = 0
+            strikes = 0
+            return total_bases
+            return balls
+            return strikes
+            return_runs()
+        elif swing_type == 'x':
+            balls += 1
+            return balls
+            print(f"Ball {balls}!")
+    elif pitch_type == 'e':
+        if swing_type == 'n':
+            print("Double!")
+            total_bases += 2
+            balls = 0
+            strikes = 0
+            return total_bases
+            return balls
+            return strikes
+            return_runs()
+        elif swing_type == 'p':
+            print("Home run!")
+            total_bases += 4
+            balls = 0
+            strikes = 0
+            return total_bases
+            return balls
+            return strikes
+            return_runs()
+        elif swing_type == 'c':
+            print("Groundout!")
+            outs += 1
+            balls = 0
+            strikes = 0
+            return outs
+            return balls
+            return strikes
+            print(f"{outs} outs!")
+        elif swing_type == 'x':
+            balls += 1
+            return balls
+            print(f"Ball {balls}!")
+    elif pitch_type == 's':
+        if swing_type == 'n':
+            print("Lineout!")
+            outs += 1
+            balls = 0
+            strikes = 0
+            return outs
+            return balls
+            return strikes
+            print(f"{outs} outs!")
+        elif swing_type == 'p':
+            print("Strike swinging!")
+            strikes += 1
+            return strikes
+            print(f"Strike {strikes}!")
+        elif swing_type == 'c':
+            print("Single!")
+            total_bases += 1
+            balls = 0
+            strikes = 0
+            return total_bases
+            return balls
+            return strikes
+            return_runs()
+        elif swing_type == 'x':
+            balls += 1
+            return balls
+            print(f"Ball {balls}!")
+    elif balls >= 4:
         print("Walk!")
         total_bases += 1
         balls = 0
@@ -69,132 +210,6 @@ def make_true():
         return strikes
         return outs
 
-# where the input of the pitch type is gotten from
-def get_pitch_type():
-    global pitch_type
-    pitch_choices = ['f', 'v', 'e', 's']
-    pitch_type = input(pitch_choices)
-    return pitch_type
-
-# where the input of the hit type is gotten from
-def get_swing_type():
-    global swing_type
-    hitter_choices  = ['n', 'p', 'c', 'x']
-    swing_type = input(hitter_choices)
-    return swing_type
-
-# how the number of runs that the player has is calculated
-def determine_runs():
-    global total_bases
-    return total_bases
-    runs = total_bases // 4
-    print(f"runs = {runs}")
-
-# these are the various outcomes and results and vary for each combo of inputs
-def get_result():
-    global balls
-    global strikes
-    global outs
-    global total_bases
-    global runs
-    if pitch_type == 'f':
-        if swing_type == 'n':
-            print("Strike swinging!")
-            strikes += 1
-            return strikes
-            print(f"Strike {strikes}!")
-            determine_playable()
-        elif swing_type == 'p':
-            print("Home run!")
-            total_bases += 4
-            return total_bases
-            return_runs()
-            determine_playable()
-        elif swing_type == 'c':
-            print("Single!")
-            total_bases += 1
-            return total_bases
-            return_runs()
-            determine_playable()
-        elif swing_type == 'x':
-            print("Stike looking!")
-            strikes += 1
-            return strikes
-            print(f"Strike {strikes}!")
-            determine_playable()
-    elif pitch_type == 'v':
-        if swing_type == 'n':
-            print("Groundout!")
-            outs += 1
-            return outs
-            print(f"{outs} outs!")
-            determine_playable()
-        elif swing_type == 'p':
-            print("Strike swinging!")
-            strikes += 1
-            return strikes
-            print(f"Strike {strikes}!")
-            determine_playable()
-        elif swing_type == 'c':
-            print("Single!")
-            total_bases += 1
-            return total_bases
-            return_runs()
-            determine_playable()
-        elif swing_type == 'x':
-            balls += 1
-            return balls
-            print(f"Ball {balls}!")
-            determine_playable()
-    elif pitch_type == 'e':
-        if swing_type == 'n':
-            print("Double!")
-            total_bases += 2
-            return total_bases
-            return_runs()
-            determine_playable()
-        elif swing_type == 'p':
-            print("Home run!")
-            total_bases += 4
-            return total_bases
-            return_runs()
-            determine_playable()
-        elif swing_type == 'c':
-            print("Groundout!")
-            outs += 1
-            return outs
-            print(f"{outs} outs!")
-            determine_playable()
-        elif swing_type == 'x':
-            balls += 1
-            return balls
-            print(f"Ball {balls}!")
-            determine_playable()
-    elif pitch_type == 's':
-        if swing_type == 'n':
-            print("Lineout!")
-            outs += 1
-            return outs
-            print(f"{outs} outs!")
-            determine_playable()
-        elif swing_type == 'p':
-            print("Strike swinging!")
-            strikes += 1
-            return strikes
-            print(f"Strike {strikes}!")
-            determine_playable()
-        elif swing_type == 'c':
-            print("Single!")
-            total_bases += 1
-            return total_bases
-            return_runs()
-            determine_playable()
-        elif swing_type == 'x':
-            balls += 1
-            return balls
-            print(f"Ball {balls}!")
-            determine_playable()
-
 # the order in which the functions will run
 def baseball():
     global balls
@@ -207,7 +222,5 @@ def baseball():
         get_pitch_type()
         get_swing_type()
         get_result()
-    while False:
-        make_true()
 
 baseball()
