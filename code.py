@@ -51,14 +51,6 @@ def get_swing_type():
     swing_type = input(hitter_choices)
     return swing_type
 
-# how the number of runs that the player has is calculated
-def return_runs():
-    global total_bases
-    global runs
-    return total_bases
-    runs = total_bases // 4
-    print(f"runs = {runs}")
-
 # these are the various outcomes and results and vary for each combo of inputs
 def get_result():
     global balls
@@ -75,21 +67,25 @@ def get_result():
         elif swing_type == 'p':
             print("Home run!")
             total_bases += 4
+            runs = total_bases // 4
+            print(f"Runs = {runs}")
             balls = 0
             strikes = 0
             return total_bases
             return balls
             return strikes
-            return_runs()
+            return runs
         elif swing_type == 'c':
             print("Single!")
             total_bases += 1
+            runs = total_bases // 4
+            print(f"Runs = {runs}")
             balls = 0
             strikes = 0
             return total_bases
             return balls
             return strikes
-            return_runs()
+            return runs
         elif swing_type == 'x':
             print("Stike looking!")
             strikes += 1
@@ -113,12 +109,14 @@ def get_result():
         elif swing_type == 'c':
             print("Single!")
             total_bases += 1
+            runs = total_bases // 4
+            print(f"Runs = {runs}")
             balls = 0
             strikes = 0
             return total_bases
             return balls
             return strikes
-            return_runs()
+            return runs
         elif swing_type == 'x':
             balls += 1
             return balls
@@ -127,21 +125,25 @@ def get_result():
         if swing_type == 'n':
             print("Double!")
             total_bases += 2
+            runs = total_bases // 4
+            print(f"Runs = {runs}")
             balls = 0
             strikes = 0
             return total_bases
             return balls
             return strikes
-            return_runs()
+            return runs
         elif swing_type == 'p':
             print("Home run!")
             total_bases += 4
+            runs = total_bases // 4
+            print(f"Runs = {runs}")
             balls = 0
             strikes = 0
             return total_bases
             return balls
             return strikes
-            return_runs()
+            return runs
         elif swing_type == 'c':
             print("Groundout!")
             outs += 1
@@ -173,12 +175,14 @@ def get_result():
         elif swing_type == 'c':
             print("Single!")
             total_bases += 1
+            runs = total_bases // 4
+            print(f"Runs = {runs}")
             balls = 0
             strikes = 0
             return total_bases
             return balls
             return strikes
-            return_runs()
+            return runs
         elif swing_type == 'x':
             balls += 1
             return balls
@@ -186,11 +190,14 @@ def get_result():
     elif balls >= 4:
         print("Walk!")
         total_bases += 1
+        runs = total_bases // 4
+        print(f"Runs = {runs}")
         balls = 0
         strikes = 0
         return balls
         return strikes
         return total_bases
+        return runs
         return True
     elif strikes >= 3:
         print("Strikeout!")
