@@ -223,7 +223,7 @@ def baseball():
     global strikes
     global outs
     global total_bases
-    determine_playable
+    determine_playable()
     while True:
         print(f"{balls} balls, {strikes} strikes, {outs} outs")
         get_pitch_type()
