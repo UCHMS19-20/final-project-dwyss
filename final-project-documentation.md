@@ -27,6 +27,7 @@ The game continues until there is 3 outs.
 ### Citations
 
 Camalich, Sergio. Baseball Game. 23 March 2018, https://gist.github.com/esecamalich/0296a0bdbd5fb030d5943c61e8028a3e.
+
 mrsauve. Baseball Game. 13 July 2019, https://repl.it/@mrsauve/Baseball-Game.
 
 ### Flowchart
